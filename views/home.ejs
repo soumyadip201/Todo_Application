@@ -1,0 +1,135 @@
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="icon.png" type="Image/png" />
+
+    <!-- font awesome link -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/layout.css">
+</head>
+
+<body>
+
+    <h1 class="title">Todo Application</h1>
+
+    <div class="mid">
+
+        <section>
+            <h1 class="table-heading">Stuff I Need To Do</h1>
+
+            <!-- form to create task -->
+            <form action="/create-task" method="POST">
+
+                <table class="table create-task">
+
+                    <thead>
+                        <div id="list">
+                            <tr class="table-active">
+                                <th class="th-design">Description</th>
+                                <th class="th-design">Category</th>
+                                <th class="th-design">Date</th>
+                                <th class="th-design"></th>
+                        </div>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr class="table-active-info">
+
+                            <td> <input type="text" class="add-task-input input-design" name="description"
+                                    placeholder="What do you need to do ?" required></input></td>
+
+                            <td> <select class="select-category  input-design" name="category" required>
+                                    <option selected="true" disabled="disabled">---Choose a category---</option>
+                                    <option>Personal</option>
+                                    <option>Work</option>
+                                    <option>Study</option>
+                                    <option>Market</option>
+                                    <option>Other</option>
+                                </select></td>
+
+                            <td> <input type="date" class="date  input-design" name="date" required></td>
+
+                            <td>
+                                <button type="submit" class="btn-success" id="add">
+                                    ADD TASK
+                                </button>
+                            </td>
+
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </form>
+
+        </section>
+
+        <div>
+            <h1 class="table-heading">Tasks List</h1>
+
+            <form action="/delete-task" method="GET">
+                <table class="table task-list">
+
+                    <thead>
+                        <tr class="table-active">
+                            <th class="thlist-design">Select</th>
+                            <th class="thlist-design">Task</th>
+                            <th class="thlist-design">Category</th>
+                            <th class="thlist-design">Due date</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <% for(let i of task) { %>
+                            <tr class="table-active-info task-tr">
+                                <td class="tdlist-design checkbox-label ">
+                                    <input type="checkbox" name="<%= i._id %>">
+                                    <span class="checkbox-custom circular"></span>
+                                </td>
+                                <td class="tdlist-design">
+                                    <p id="task-description">
+                                        <%= i.description %>
+                                    </p>
+                                </td>
+                                <td class="tdlist-design">
+                                    <p id="task-category">
+                                        <%= i.category %>
+                                    </p>
+                                </td>
+                                <td class="tdlist-design">
+                                    <p id="due-date">
+                                        <%= i.date %>
+                                    </p>
+                                </td>
+                            </tr>
+                            <% } %>
+                    </tbody>
+                </table>
+
+                <div>
+                    <button type="submit" class="btn-danger">
+                        <i class="fas fa-trash-alt"></i>
+                        DELETE TASK
+                    </button>
+                </div>
+
+            </form>
+
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,4 +1,160 @@
-body{
+:root{
+    --clr-primary: rgb(54, 112, 199);
+    --clr-light: #f4f4f4;
+    --clr-dark: #333;
+    --clr-warning: rgb(168, 16, 16);
+    --clr-green:rgb(40, 212, 48);
+  }
+    
+  *,
+  *::before,
+  *::after {
     margin:0px;
+    padding:0px;
+    font-family: inherit;
+    box-sizing: border-box;
+  }
+    
+  body {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 300;
+    font-size: 1.5rem;
+    background-color: var(--clr-primary);
+    margin-bottom:15px;
+    color: var(--clr-dark);
+  }
+  
+  .title {
     text-align: center;
-}
+    font-size: calc(7vw + 2rem);
+    font-weight: 900;
+    color: rgba(228, 226, 226, 0.342);
+    font-family: garamond;
+    font-style: italic;
+    letter-spacing: 1px;
+    margin: 0em 0 0.2em;
+  }
+  
+  .mid{
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2em;
+    background-color: var(--clr-light);
+    color: var(--clr-dark);
+  
+  }
+  
+  .table{
+    margin:30px 0px 40px;
+    padding:1rem;
+    border: 1px solid black;
+  }
+  
+  .table-heading{
+    font-size: 3rem;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    padding-top:2rem;
+    
+  } 
+  
+  .th-design{
+    text-transform: uppercase;
+  }
+  
+  .table-active th{
+    padding:0px 1rem 1rem 0rem;
+    
+  }
+  
+  .table-active-info {
+    font-size: 0.9em;
+  }
+  
+  .table-active-info td{
+    padding-right: 1em;
+  }
+  
+  .input-design{
+    background: transparent;
+    border: 0;
+    color: inherit;
+    font-size: inherit;
+    outline: none;
+    margin-right:15px;
+    padding-bottom: 0.5em;
+    border-bottom: 0.2px solid currentColor;
+  
+  }
+  
+  .add-task-input{
+    width:13rem;
+  }
+  
+  .btn-success{
+    position: relative;
+    top:-5px;
+    left:10px;
+    background-color:var(--clr-green);
+    color: var(--clr-light);
+    border: none;
+    width:6rem;
+    height:1.7rem;  
+  }
+  
+  .btn-success:hover{
+    background-color:rgb(18, 126, 23);
+  }
+  
+  .btn-success::before{
+    font-family: "Font Awesome 5 Free";
+    content: "\f067";
+    display: inline-block;
+    padding-right: 3px;
+    vertical-align: middle;
+    font-weight: 900;
+    font-size: 0.8em;  
+  }
+  
+  .task-list{
+    width: 100%;
+    
+  }
+  
+  .thlist-design{
+    text-transform: uppercase;
+    width: 16em;
+  }
+  
+  .tdlist-design{
+    text-align: center;
+    width: 18em;
+    padding:0.5em 0em;
+  }
+  
+  .task-tr{
+    height: 2rem;
+  }
+  .task-tr:nth-child(odd){
+    background-color: rgba(102, 102, 102, 0.479);
+    color: #f4f4f4;
+  }
+  
+  .task-tr:nth-child(even){
+    background-color: rgba(27, 26, 26, 0.705);
+    color: #f4f4f4;
+  
+  }
+  
+  .btn-danger{
+    position: relative;
+    left: 44%;
+    background-color:var(--clr-warning);
+    letter-spacing:1.5px;
+    color: var(--clr-light);
+    border: none;
+    width:9rem;
+    height:2rem;  
+  }
